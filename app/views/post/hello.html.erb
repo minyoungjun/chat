@@ -1,0 +1,11 @@
+<h1>this is chat all</h1>
+
+<% @chats.each do |chato| %>
+    <p><%=chato.content%></p>
+<%end%>
+
+<form action="/submit_process" method="post">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <input type="text" name="chat">
+    <input type="submit" value="전송">
+</form>
